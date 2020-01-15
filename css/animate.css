@@ -1,0 +1,211 @@
+/*第一屏动画*/
+.screen-1__phone,
+.screen-1__shadow,
+.screen-1__heading{
+    transition: all 1s;
+}
+.screen-1__heading_animate_init,
+.screen-1__shadow_animate_init
+{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-1__phone_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+.screen-1__heading_animate_done,
+.screen-1__phone_animate_done,
+.screen-1__shadow_animate_done{
+    transform: translate(0,0);
+    opacity: 1;
+}
+/*第二屏动画*/
+.screen-2__phone,
+.screen-2__heading,
+.screen-2__subheading{
+    transition: all 1s;
+}
+.screen-2__desc__2,
+.screen-2__desc__1,
+.screen-2__desc__3{
+    transition: all 1s 1s;
+}
+.screen-2__phone_animate_init,
+.screen-2__subheading_animate_init
+{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-2__heading_animate_init {
+    transform: translate(0, -100%);
+    opacity: 0;
+}
+.screen-2__desc__2_animate_init{
+    transform: translate(-100%, 0);
+    opacity: 0;
+}
+.screen-2__desc__1_animate_init,
+.screen-2__desc__3_animate_init{
+    transform: translate(100%, 0);
+    opacity: 0;
+}
+.screen-2__desc__2_animate_done,
+.screen-2__desc__1_animate_done,
+.screen-2__desc__3_animate_done,
+.screen-2__phone_animate_done,
+.screen-2__heading_animate_done,
+.screen-2__subheading_animate_done{
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+/*使用帧动画设置bounce特效*/
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+.screen-2__desc::before,
+.screen-2__desc::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255,0,0,0.4);
+}
+.screen-2__desc::after{
+    animation: bounce 2s infinite;
+}
+.screen-2__desc::before{
+    animation: bounce 2s infinite 1s;
+}
+.screen-2__desc__2:after,
+.screen-2__desc__2:before{
+    left: 186px;
+}
+/*第三屏动画*/
+.screen-3__phone,
+.screen-3__heading,
+.screen-3__subheading,
+.screen-3__feature{
+    transition: all 1s;
+}
+.screen-3__heading_animate_done,
+.screen-3__subheading_animate_done,
+.screen-3__phone_animate_done{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.screen-3__phone_animate_init,
+.screen-3__subheading_animate_init
+{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-3__heading_animate_init {
+    transform: translate(0, -100%);
+    opacity: 0;
+}
+.screen-3__feature_animate_init{
+    transform: scale(.5);
+    opacity: 0;
+}
+.screen-3__feature_animate_done{
+    transform: scale(1);
+}
+.screen-3__feature-item{
+    transition: all .5s;
+    cursor: pointer;
+}
+.screen-3__feature-item:hover{
+    transform: scale(1.1);
+    border-color: #ffffff;
+}
+/*第四屏动画*/
+.screen-4__subheading,
+.screen-4__heading{
+    transition: all 1s;
+}
+
+.screen-4__heading_animate_init{
+    opacity: 0;
+    transform: translate(0,-100%);
+}
+.screen-4__subheading_animate_init{
+    opacity: 0;
+    transform: translate(0,100%);
+}
+
+.screen-4__type__item_i_1{
+    transition: all 1s .5s;
+}
+.screen-4__type__item_i_2{
+    transition: all 1s 1s;
+}
+.screen-4__type__item_i_3{
+    transition: all 1s 1.5s;
+}
+.screen-4__type__item_i_4{
+    transition: all 1s 2s;
+}
+
+
+
+.screen-4__type__item_i_1_animate_init,
+.screen-4__type__item_i_2_animate_init,
+.screen-4__type__item_i_3_animate_init,
+.screen-4__type__item_i_4_animate_init{
+    opacity: 0;
+}
+
+
+.screen-4__type__item_i_1_animate_done,
+.screen-4__type__item_i_2_animate_done,
+.screen-4__type__item_i_3_animate_done,
+.screen-4__type__item_i_4_animate_done{
+    opacity: 1;
+}
+/*第5屏动画*/
+
+.screen-5__bg,
+.screen-5__subheading,
+.screen-5__heading{
+    transition: all 1s;
+}
+.screen-5__heading_animate_init{
+    opacity: 0;
+    transform: translate(0,-100%);
+}
+.screen-5__bg_animate_init,
+.screen-5__subheading_animate_init{
+    opacity: 0;
+    transform: translate(0,100%);
+}
+/*导航栏悬浮*/
+.header_animate_float{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 3;
+}
+.header_animate_float .header__logo,
+.header_animate_float .nav__item{
+    color: white;
+}
+.header_animate_float .nav__item_active{
+    color: #f01414;
+}
+.header_animate_float .nav__item:hover{
+    transition: all 1s;
+    color: red;
+}
